@@ -49,6 +49,8 @@
 
 	<!-- webpage content goes here -->
 
+
+
 	<div class="page-wrapper">
 
 		<div class="vertical-menu">
@@ -69,6 +71,7 @@
 
 
 			<main>
+
 
 
 				<h2 class="title-abstract">Preface</h2>
@@ -104,6 +107,9 @@
 					all in.
 				</p>
 
+			
+
+
 
 				<h2 id="door" class="title">To enter a home through the door</h2>
 
@@ -129,6 +135,9 @@
 					against my window. And when the moon and the sun do not compete against each other in the sky, they
 					are at home. At peace, amongst a shared plane.
 				</p>
+
+
+				<h2 class="sub-title">Let the starfish in the sky, guide me - </h2>
 
 
 				<h2 id="crack" class="title">To enter a home through a crack in the wall</h2>
@@ -367,6 +376,41 @@
 				</p>
 
 
+
+
+
+
+
+<button class="symbol-btn" id="sym-btn" onclick="toggleOverlay()">
+  <img src="assets/images/symbol.svg" alt="open preface">
+</button>
+
+
+<button class="close-x" id="close-x" onclick="toggleOverlay()">*</button>
+
+<div class="overlay" id="overlay">
+  <div class="overlay-inner">
+    <p>Zoë Zer Yinn Ng Gschmaiss</p>
+	<p> 2026</p>
+	<p>Writing Guided by Dirk Vis</p>
+	<p>Coding Guided by François Girard-Meunier & Thomas Buxó </p>
+	<p>[A big thank you to my dear friends, Maja Usak and Silva Zeller, for supporting me along the way]</p>
+
+  </div>
+</div>
+
+<script>
+  function toggleOverlay() {
+    const overlay = document.getElementById('overlay');
+    const symBtn = document.getElementById('sym-btn');
+    const closeX = document.getElementById('close-x');
+    const isOpen = overlay.classList.toggle('open');
+    symBtn.style.display = isOpen ? 'none' : 'block';
+    closeX.classList.toggle('open', isOpen);
+  }
+</script>
+
 </body>
+
 
 </html>

@@ -83,6 +83,82 @@ a:hover {
 
 
 
+.symbol-btn {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 20px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1000;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.symbol-btn:hover { opacity: 1; }
+.symbol-btn img { width: 100%; height: auto; }
+
+.close-x {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #555;
+  z-index: 1001;
+  display: none;
+  line-height: 1;
+  padding: 0;
+}
+
+.close-x:hover { color: black; }
+.close-x.open { display: block; }
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+  box-sizing: border-box;
+  z-index: 999;
+}
+
+.overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay-inner {
+  max-width: 560px;
+  text-align: center;
+}
+
+.overlay-inner h3 {
+  font-family: 'CloisterAntiqua', serif;
+  font-size: 1.5rem;
+  margin: 0 0 1.5rem;
+}
+
+.overlay-inner p {
+  font-family: 'CloisterAntiqua', serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+
+
 .vertical-menu {
   position: fixed;
   top: var(--margin);
@@ -135,7 +211,17 @@ div.page-wrapper {
   margin: 1rem 2rem 0 0 ;
 }
 
+@media (max-width: 779px) {
+  .text-with-image {
+    grid-template-columns: 1fr;  /* stacks into one column */
+  }
 
+  .story-image {
+    width: 60%;        /* or 100% for full width */
+    margin: 0 auto;    /* centers it */
+    display: block;
+  }
+}
 
 
 .thesis-title {
@@ -153,8 +239,8 @@ div.page-wrapper {
 }
 
 .paragraph-abstract {
-  padding-left: 15vh;
-  padding-right: 15vh;
+  padding-left: 8vw;
+  padding-right: 8vw;
   font-size: 4vh;
   font-weight: 200;
   font-family: CloisterAntiqua;
@@ -227,21 +313,33 @@ mark {
 @media (min-width: 1201px) and (max-width: 1320px) { :root { --font-size: 22px; } html, body { font: var(--font-size) var(--font-text); } }
 @media (min-width: 1321px)                         { :root { --font-size: 24px; } html, body { font: var(--font-size) var(--font-text); } }
 
-/* MOBILE — bis 779px */
 
 @media (max-width: 779px) {
+
+
+  .symbol-btn {
+     top: 0;
+     margin: 12px;
+     background-color: rgba(255, 255, 255, 0.95);    
+  }
+
+  .symbol-btn img{
+    width: 28px;
+  }
+  
+  
 
 
   .vertical-menu {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 85%;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.95);
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: none;
     padding: 8px 0;
     gap: 0;
   }
